@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This README will introduce the [Cypress](https://www.cypress.io/) and go over some example tests on a React app.
 
-## Available Scripts
+# **What** is Cypress?
+A JavaScript testing framework for writing all types of tests:
+* End-toend tests
+* Integration tests
+* Unit tests
 
-In the project directory, you can run:
+Cypress lets you to test anything that runs in the browser.
 
-### `npm start`
+# **How** is Cypress different?
+Tests run inside the browser in the same run loop as your app code.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# **Why** Cypress?
+### ***Speed***
+Running tests with most tools requires communication between 3 processes (WebDriver client, browser driver, & browser). With Cypress, there's only one process, the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### ***Native Access***
+Because Cypress operates within your application, you have access to all the same objects as your application code and can easily stub out functionality and programatically alter state instead of building up state through UI.
 
-### `npm test`
+### ***Features***
+* Time travel through Snapshots of your app at every event.
+* Debug directly from dev tools.
+* Automatic Waiting and retries.
+* Built-in server mocking
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<hr>
 
-### `npm run build`
+#### Unit testing React components
+Install the [cypress-react-unit-test](https://github.com/bahmutov/cypress-react-unit-test) plugin.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> ```npm i cypress-react-unit-test --save-dev```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Add the plugin to [`cypress/support/index.js`](./cypress/support/index.js)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> 
+```javascript
+import 'cypress-react-unit-test';
+```
 
-### `npm run eject`
+From your test file import your component.
+>
+```javascript
+import { Hello } from '../../src/Hello';
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Now you can use `cy.mount()` to mount your component in the browser, and the `cy.get()` command accepts React components in addition to selectors.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<hr>

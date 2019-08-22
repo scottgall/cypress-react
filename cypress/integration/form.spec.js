@@ -1,3 +1,5 @@
+import { useInputValue } from '../../src/Form';
+
 describe('Form', () => {
   const input = "cheese";
   beforeEach(() => {
@@ -30,5 +32,18 @@ describe('Form', () => {
       .click()
       .should('have.css', 'text-decoration')
       .and('match', /line-through/)
+  })
+
+  it('accessibility check', () => {
+    cy.injectAxe()
+    cy.checkA11y()
+  })
+
+  it('calls useInputValue', () => {
+    useInputValue = cy.stub()
+    cy.get('.userInput')
+      .type(input)
+    expect(useInputValue).to.be.called
+
   })
 })

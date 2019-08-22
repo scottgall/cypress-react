@@ -10,7 +10,7 @@ const useInputValue = (initialValue) => {
   }
 }
 
-export default ({onSubmit}) => {
+function Form ({onSubmit}) {
   const { resetValue, ...text } = useInputValue('');
 
   return (
@@ -19,7 +19,9 @@ export default ({onSubmit}) => {
       onSubmit(text.value);
       resetValue();
     }}>
-      <input className="userInput" autoFocus {...text} />
+      <input aria-label="todo-input" type="text" name="todo" className="userInput" autoFocus {...text} />
     </form>
   );
 };
+
+export { useInputValue, Form }
