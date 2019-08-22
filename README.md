@@ -6,21 +6,21 @@ A JavaScript testing framework for writing all types of tests:
 * Integration tests
 * Unit tests
 
-Cypress lets you to test anything that runs in the browser.
+Cypress lets you test anything that runs in the browser.
 
 # **How** is Cypress different?
 Tests run inside the browser in the same run loop as your app code (no Selenium/WebDriver).
 
 # **Why** Cypress?
 ### ***It's for developers*** 👩‍💻
-It's free, open-source, and easily installs through npm as a local test runner application and dashboard service with a bunch of handy features.
-* Time travel through Snapshots of your app at every event.
+It's free, open-source, and easily installs through npm as a local test runner application and dashboard service with a bunch of handy features:
+* Time travel through snapshots of your app at every page event.
 * Debug directly from dev tools.
-* Automatic Waiting and retries.
+* Automatic waiting and retries.
 * Built-in server mocking.
 
 ### ***It's fast*** 🚄
-Most automation tools function as a remote command interface that requires communication between a WebDriver client, the browser driver, and the browser itself. 
+Most automation tools are a remote command interface that requires communication between a WebDriver client, the browser driver, and the browser itself. 
 
 With Cypress, there's only one process, the ***browser***! 1️⃣
 
@@ -30,7 +30,7 @@ With Cypress, there's only one process, the ***browser***! 1️⃣
 ![Cypress architecture](https://res.cloudinary.com/dmkdfvoqb/image/upload/v1566504929/Screen_Shot_2019-08-22_at_3.14.39_PM.png)
 
 ### ***It gives you control*** 🔑
-Cypress gives you [access](https://docs.cypress.io/guides/overview/key-differences.html#Native-access) to all the same objects as your application code so you can easily [stub](https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Capabilities) out functionality and programatically alter state instead of tediously building it up through your UI.
+Cypress gives you [access](https://docs.cypress.io/guides/overview/key-differences.html#Native-access) to all the same objects as your application code so you can easily [stub](https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Capabilities) out functionality and programatically alter state instead of building it up through your UI.
 
 ***
 
@@ -67,13 +67,13 @@ cy.get(Hello)
 cy.contains(`Hello ${name2}!`);
 ```
 ### ***Hooks***
-If you want to unit test a component that uses Hooks, add the follwing in [`cypress/support/index.js`](./cypress/support/index.js)
+To mount components that use hooks, add to [`cypress/support/index.js`](./cypress/support/index.js)...
 ```javascript
 Cypress.on('window:load', win => {
     win.ReactDOM = window.ReactDOM || win.ReactDOM;
 });
 ```
-and add the following in your [test file](./cypress/integration/Counter.spec.js).
+and to your [test file](./cypress/integration/Counter.spec.js).
 ```javascript
 import * as ReactDOM from 'react-dom';
 window.ReactDOM = ReactDOM;
