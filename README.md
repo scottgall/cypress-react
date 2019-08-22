@@ -100,7 +100,7 @@ it('accessibility check', () => {
 });
 ```
 Removing the `aria-label` attribute from the `input` element in [`form.jsx`](./src/Form.jsx) causes its [test](./cypress/integration/Form.spec.js) to fail with an "A11Y ERROR!" warning.
-> *Select the error and open dev tools for more info and a helpful [link](https://dequeuniversity.com/rules/axe/3.3/label?application=axeAPI).* <br>
+> *Pin the error and open dev tools for more info and a helpful [link](https://dequeuniversity.com/rules/axe/3.3/label?application=axeAPI).* <br>
 ![A11Y ERROR example](https://res.cloudinary.com/dmkdfvoqb/image/upload/v1566517961/Screen_Shot_2019-08-22_at_6.52.08_PM.png)
 
 ***
