@@ -41,7 +41,7 @@ Add the plugin to [`cypress/support/index.js`](./cypress/support/index.js)
 import 'cypress-react-unit-test';
 ```
 
-From your test file import your component.
+From your [test file](./cypress/integration/Hello.spec.js) import your [component](./src/Hello.jsx).
 >
 ```javascript
 import { Hello } from '../../src/Hello';
