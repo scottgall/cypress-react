@@ -29,7 +29,10 @@ Because Cypress operates within your application, you have access to all the sam
 #### Unit testing React components
 Install the [cypress-react-unit-test](https://github.com/bahmutov/cypress-react-unit-test) plugin.
 
-> ```npm i cypress-react-unit-test --save-dev```
+> 
+```
+npm i cypress-react-unit-test --save-dev
+```
 
 Add the plugin to [`cypress/support/index.js`](./cypress/support/index.js)
 
