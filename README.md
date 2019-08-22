@@ -34,7 +34,7 @@ Cypress gives you [access](https://docs.cypress.io/guides/overview/key-differenc
 
 ***
 
-### Unit testing React components
+### ***Unit testing React components***
 Install the [cypress-react-unit-test](https://github.com/bahmutov/cypress-react-unit-test) plugin.
 
 > 
@@ -66,7 +66,7 @@ cy.get(Hello)
   .invoke('setState', stateToSet);
 cy.contains(`Hello ${name2}!`);
 ```
-### ***Hooks***
+#### * ***Hooks***
 To mount components that use hooks, add to [`cypress/support/index.js`](./cypress/support/index.js)...
 ```javascript
 Cypress.on('window:load', win => {
@@ -79,8 +79,30 @@ import * as ReactDOM from 'react-dom';
 window.ReactDOM = ReactDOM;
 ```
 
+***
+
+### ***Automate accessibility testing alongside your regular functional testing***
+
+Install the [cypress-axe](https://github.com/avanslaars/cypress-axe) plugin.
+```
+npm i cypress-axe --save-dev
+```
+Add to [`cypress/support/index.js`](./cypress/support/index.js).
+```javascript
+import 'cypress-axe';
+```
+Inject the [axe-core](https://github.com/dequelabs/axe-core) runtime into the page under test with `cy.injectAxe()` after a call to `cy.visit()` and before the `checkA11y()` command.
+```javascript
+it('accessibility check', () => {
+  cy.visit('/');
+  cy.injectAxe();
+  cy.checkA11y();
+});
+```
+Removing the `aria-label` attribute from the `input` element in [`form.jsx`](./src/Form.jsx) causes its [test](./cypress/integration/Form.spec.js) to fail with an "A11Y ERROR!" warning.
+> *Select the error and open dev tools for more info and a helpful [link](https://dequeuniversity.com/rules/axe/3.3/label?application=axeAPI).* <br>
+![A11Y ERROR example](https://res.cloudinary.com/dmkdfvoqb/image/upload/v1566517961/Screen_Shot_2019-08-22_at_6.52.08_PM.png)
 
 ***
 
 ## ***Trade-offs***
-* 
