@@ -34,6 +34,19 @@ Cypress gives you [access](https://docs.cypress.io/guides/overview/key-differenc
 
 ***
 
+### ***Installation & testing your app***
+
+...
+
+***
+
+### ***Mocking functions & data***
+
+...
+
+***
+
+
 ### ***Unit testing React components***
 Install the [cypress-react-unit-test](https://github.com/bahmutov/cypress-react-unit-test) plugin.
 
@@ -106,3 +119,12 @@ Removing the `aria-label` attribute from the `input` element in [`form.jsx`](./s
 ***
 
 ## ***Trade-offs***
+
+...
+
+***
+
+## ***Links***
+
+...
+
