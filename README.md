@@ -83,7 +83,7 @@ Click the [test file](./src/cypress/integration/init.spec.js) in your Cypress de
 
 > ![Cypress desktop app](https://res.cloudinary.com/dmkdfvoqb/image/upload/v1566581048/Screen_Shot_2019-08-23_at_12.23.57_PM.png)
 
-Cypress launches your app and tests in a new browserr window. You can time travel through snapshots of your application at each page and test event.
+Cypress launches your app/tests in a new browser window. You can time travel through each page & test event.
 
 > ![Cypress test](https://res.cloudinary.com/dmkdfvoqb/image/upload/v1566581000/Screen_Shot_2019-08-23_at_12.22.29_PM.png)
 
@@ -100,7 +100,6 @@ Now you can open your app from your tests with:
 ```javascript
 cy.visit('/');
 ```
-
 
 ***
 
