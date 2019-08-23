@@ -1,4 +1,4 @@
-This README introduces [Cypress](https://www.cypress.io/) and demonstrates testing a React app with the tool.
+This README introduces [Cypress](https://www.cypress.io/) and walks through setting it up and testing a React app.
 
 # **What** is Cypress?
 A JavaScript testing framework for writing all types of tests:
@@ -86,6 +86,21 @@ Click the [test file](./src/cypress/integration/init.spec.js) in your Cypress de
 Cypress launches your app and tests in a new browserr window. You can time travel through snapshots of your application at each page and test event.
 
 > ![Cypress test](https://res.cloudinary.com/dmkdfvoqb/image/upload/v1566581000/Screen_Shot_2019-08-23_at_12.22.29_PM.png)
+
+Configure [`cypress.json`](./cypress.json) with your `baseUrl`.
+
+```json
+ {
+  "baseUrl": "http://localhost:8080"
+}
+```
+
+Now you can open your app from your tests with:
+
+```javascript
+cy.visit('/');
+```
+
 
 ***
 
