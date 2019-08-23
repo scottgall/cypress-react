@@ -59,11 +59,37 @@ npm run cypress
 
 ### ***Writing & running tests***
 
-...
+Start your server.
+
+```
+npm start
+```
+
+Create a [test file](./src/cypress/integration/init.spec.js) file in [`/cypress/integration`](./src/cypress/integration).
+
+```javascript
+describe('Cypress', () => {
+  it('is working', () => {
+    expect(true).to.equal(true);
+  });
+
+  it('visits the app', () => {
+    cy.visit('http://localhost:3000/');
+  });
+});
+```
+
+Click the [test file](./src/cypress/integration/init.spec.js) in your Cypress desktop app to run your test.
+
+> ![Cypress desktop app](https://res.cloudinary.com/dmkdfvoqb/image/upload/v1566581048/Screen_Shot_2019-08-23_at_12.23.57_PM.png)
+
+Cypress launches your app and tests in a new browserr window. You can time travel through snapshots of your application at each page and test event.
+
+> ![Cypress test](https://res.cloudinary.com/dmkdfvoqb/image/upload/v1566581000/Screen_Shot_2019-08-23_at_12.22.29_PM.png)
 
 ***
 
-### ***Mocking functions & data***
+### ***Mocking requests & data***
 
 ...
 
