@@ -34,7 +34,13 @@ Cypress gives you [access](https://docs.cypress.io/guides/overview/key-differenc
 
 ***
 
-### ***Installation & testing your app***
+### ***Installation***
+
+...
+
+***
+
+### ***Writing & running tests***
 
 ...
 
@@ -94,7 +100,7 @@ window.ReactDOM = ReactDOM;
 
 ***
 
-### ***Automate accessibility testing alongside your regular functional testing***
+### ***Testing for accessibility***
 
 Install the [cypress-axe](https://github.com/avanslaars/cypress-axe) plugin.
 ```
