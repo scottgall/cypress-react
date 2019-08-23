@@ -1,5 +1,3 @@
-import { useInputValue } from '../../src/Form';
-
 describe('Form', () => {
   const input = "cheese";
   beforeEach(() => {
@@ -38,12 +36,4 @@ describe('Form', () => {
     cy.injectAxe()
     cy.checkA11y()
   })
-
-  // it.skip('calls useInputValue', () => {
-  //   useInputValue = cy.stub()
-  //   cy.get('.userInput')
-  //     .type(input)
-  //   expect(useInputValue).to.be.called
-
-  // })
 })

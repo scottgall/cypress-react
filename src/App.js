@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form } from './Form';  
-import { Users } from './Users';
 import { Hello } from './Hello';
+import { Counter } from './Counter';
 import './App.css';
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
 
   return (
     <main className="App">
+      <Hello />
       <h1>Todo List</h1>
       <Form onSubmit={text => setTodos([{text, complete: false}, ...todos])} />
       <ul>

@@ -19,7 +19,7 @@ function Form ({onSubmit}) {
       onSubmit(text.value);
       resetValue();
     }}>
-      <input type="text" name="todo" className="userInput" autoFocus {...text} />
+      <input aria-label="todo-input" type="text" name="todo" className="userInput" autoFocus {...text} />
     </form>
   );
 };
